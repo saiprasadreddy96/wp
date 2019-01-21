@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<link href="quiz.css" rel="stylesheet">
+</head>
+<body>
+<div id="quizContainer" class="container">
+	<div class="title">Computer Quiz		
+	</div>
+	<div id="question" class="question"></div>
+	<label class="option"><input type="radio" name="option" value="1" onclick="validate();"/><span id="opt1"></span></label>
+	<label class="option"><input type="radio" name="option" value="2" onclick="validate();"/><span id="opt2"></span></label>
+	<label class="option"><input type="radio" name="option" value="3" onclick="validate();"/><span id="opt3"></span></label>
+	<label class="option"><input type="radio" name="option" value="4" onclick="validate();"/><span id="opt4"></span></label>
+	<div id="detector" class="alert alert-success"></div>
+	<div id="detectwrg" class="alert alert-warning"></div>
+	<button id="nextButton" class="next-btn" onclick="loadNextQuestion();">Next Question</button>
+	<button id="valid" class="next-btn" onclick="validate();">Validate</button>
+</div>
+<div id="result" class="container result" style="display:none;"></div>
+<script src="question.js" type="text/javascript"></script>
+<script src="quiz-game.js" type="text/javascript"></script>
+<script src="question.js" type="text/javascript"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/2448a7bd/cloudflare-static/rocket-loader.min.js" data-cf-nonce="ed037e965de7bd75fd0a80e4-" defer=""></script>
+</body>
+</html>
