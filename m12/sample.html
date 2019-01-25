@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/2448a7bd/cloudflare-static/rocket-loader.min.js" data-cf-nonce="ed037e965de7bd75fd0a80e4-" defer=""></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		input {
+  width: 25%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.container {
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+	</style>
+<script>
+var output = "";
+function validateForm() {
+  var username = document.forms["myForm"]["username"].value;
+  var comment = document.forms["myForm"]["comment"].value;
+  var sk = document.forms["myForm"]["psw"].value;
+  if (username == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  if (comment == "") {
+  	alert("Comment must be filled out");
+    return false;
+  }
+  if (sk != "secretkey") {
+  	alert("secret Key is not correct");
+  	return false;
+  }
+  alert("success");
+  document.getElementById("myForm").reset();
+  //document.write("data");
+  document.forms["myForm"]["result"].value = "";
+  document.getElementById("result").value = "";
+
+	var Film = {
+
+    // Initialise le film
+
+    init: function (title, year) {
+
+        this.title = title;
+
+        this.year = year;
+
+    },
+
+    // Renvoie la description du film
+
+    describe: function () {
+
+        var description = "Comment:" + "\r\n" + this.title + "\r\n" + "Name:" + "\r\n" + this.year + "\r\n";
+
+        return description;
+
+    }
+
+};
+
+
+var film1 = Object.create(Film);
+//comment.style.fontsize = "30px";
+//username.style.fontsize = "10px";
+
+
+film1.init(comment, username);
+
+var films = [];
+
+films.push(film1);
+
+
+films.forEach(function (film) {
+
+   	output = film.describe() + output;
+    
+
+});
+document.getElementById("result").value = output;
+
+}
+</script>
+</head>
+<body>
+<div class="container">
+<form name="myForm" id="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+	<div>
+  <label for="usrname">Username :</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="comment">Comment :</label><br>
+    <input type="text" id="comment" name="comment" ><br>
+    <label for="psw">Password</label><br>
+    <input type="password" id="psw" name="psw" ><br>
+  <input type="submit" value="Submit"><br><br>
+
+  	<textarea name="result" id="result" style="width:250px;height:150px;"></textarea>
+  </div>
+</form>
+</div>
+
+</body>
+</html>
