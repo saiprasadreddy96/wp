@@ -1,0 +1,21 @@
+<div class="container">
+<div *ngFor = "let pr of products.items;index as i">
+    <div class="row">
+  <div class="col-md-4">
+      <a routerLink = "/singledisplay/{{i}}"> <img src = {{pr.volumeInfo.imageLinks.smallThumbnail}} rel="image" style="width:150px;height:120px;"/></a>
+   
+</div>
+<div class="col-md-8">
+  <h3> <a routerLink = "/singledisplay/{{i}}">{{pr.volumeInfo.title}}</a></h3>
+   <div *ngIf = "pr.saleInfo.isEbook">
+    <h5 class="color1"> {{pr.saleInfo.listPrice.currencyCode}} {{pr.saleInfo.listPrice.amount}}</h5> 
+   </div>
+   <div *ngIf = "!pr.saleInfo.isEbook">
+      <h5 class="color1">Item Not Available</h5>
+       </div>
+  </div>
+<br>
+</div>
+<hr class="new4">
+</div>
+</div>

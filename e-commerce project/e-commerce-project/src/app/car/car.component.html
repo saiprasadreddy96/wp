@@ -1,0 +1,58 @@
+<html>
+  <body>
+      <div class="container">
+          <!-- <h2>Carousel Example</h2>   -->
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+        
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+<img src="https://www.nestle.com/asset-library/PublishingImages/AboutUs/Ask%20Nestle/ask-nestle-products-maggi-noodles.png" alt="Los Angeles" style="width:100%;height:400px;">
+              </div>
+        
+              <div class="item">
+<img src="https://www.redken.com/~/media/redken-commerce/images/haircare/all-soft/884486042071-all-soft-argan-oil/asarganoil.jpg?rz=1&rh=290&rw=230&hash=AAB84D01A8F3CB725C73EB2D894ED7E8CCC20A60" alt="Chicago" style="width:100%;height:400px;">
+              </div>
+            
+              <div class="item">
+<img src="https://loveincorporated.blob.core.windows.net/contentimages/gallery/12eba80a-7c07-4047-a441-d5c108732475-Courtesy-Polaroid-2.jpg" alt="New york" style="width:100%;height:400px;">
+              </div>
+            </div>
+        
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <hr>
+        
+          
+        <div class="row">
+          
+        <div *ngFor = "let pr of products.items;index as i">
+              
+                <div class="column" *ngIf = "i < 4">
+                  <div class="card">
+                      <a routerLink = "/singledisplay/{{i}}"> <img src = {{pr.volumeInfo.imageLinks.smallThumbnail}} rel="image" style="width:150px;height:120px;"/></a>
+                    <p>{{pr.volumeInfo.title}}</p>
+                    <button>Display</button>
+                  </div>
+                </div>
+          </div>
+          <br><br>
+        </div><br>
+          <a routerLink = "/display">Explore all Products</a>
+  </body>
+</html>

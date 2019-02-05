@@ -1,0 +1,17 @@
+<div class = "container">
+  <div class = "col-md-6">
+      <img src = {{product.volumeInfo.imageLinks.thumbnail}} rel="image" style="width:500px;height:500px;"/>
+  </div>
+  <div class = "col-md-6">
+    <h3>{{product.volumeInfo.title}}</h3>
+    
+      <h4 id="cn">MRP</h4>{{product.saleInfo.listPrice.amount}}
+      <h5 class = "con">Description</h5>{{product.volumeInfo.description}}
+      <h5 class = "con">Published By</h5>{{product.volumeInfo.publisher}}
+      <h5 class = "con">Published Date</h5>{{product.volumeInfo.publishedDate}}
+      <span class="con">User Rating</span>
+    
+     
+<span class="fa fa-star checked" *ngFor = "let pr of namelist"></span>
+  </div>
+</div>
