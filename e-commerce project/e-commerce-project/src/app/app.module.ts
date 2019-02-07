@@ -9,7 +9,10 @@ import { RouterModule } from '@angular/router';
 import { CarComponent } from './car/car.component';
 import { DisplayComponent } from './display/display.component';
 import { SingledisplayComponent } from './singledisplay/singledisplay.component';
-
+import { ShopcartComponent } from './shopcart/shopcart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchitemsComponent } from './searchitems/searchitems.component';
+import {FormsModule, FormGroup} from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +20,16 @@ import { SingledisplayComponent } from './singledisplay/singledisplay.component'
     HomeComponent,
     CarComponent,
     DisplayComponent,
-    SingledisplayComponent
+    SingledisplayComponent,
+    ShopcartComponent,
+    SearchitemsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path:'',
@@ -38,6 +46,14 @@ import { SingledisplayComponent } from './singledisplay/singledisplay.component'
       {
         path:'singledisplay/:id',
         component: SingledisplayComponent
+      }, 
+      {
+        path:'shopcart',
+        component: ShopcartComponent
+      },
+      {
+        path:'searchitems/:search',
+        component: SearchitemsComponent
       },
     ])
   ],

@@ -1,12 +1,12 @@
 export const product:any = {
-    "kind": "books#volumes",
+    "kind": "books#volumes1",
     "totalItems": 2490,
     
     "items": [
      {
     "quantity":3,
       "averageRating": 5,
-      "kind": "books#volume",
+      "kind": "books1#volume",
       "id": "IJLzBwAAQBAJ",
       "etag": "KxBA/l33KPs",
       "selfLink": "https://www.googleapis.com/books/v1/volumes/IJLzBwAAQBAJ",
