@@ -1,0 +1,45 @@
+.header {
+	text-align: right;
+	height: 40px;
+	display: flex;
+}
+.style {
+	background-color: skyblue;
+	width: 70px;
+}
+.stylenew {
+	font-size: 16px;
+	width: 200px;
+	background-color: white;
+	margin-right: 10px;
+}
+.rightarrow {
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid skyblue;
+}
+.leftarrow {
+	background-color: skyblue;
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid white;
+}
+.page {
+	border: 50px solid lightblue;
+	padding: 25px;
+}
+.page2 {
+	text-align: right;
+	background-color: lightblue;
+	height: 70px;
+}
+.dotted {
+	height: 25px;
+}
+#txt {
+	color: darkblue;
+}
